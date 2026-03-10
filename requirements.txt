@@ -1,0 +1,10 @@
+chromadb
+langchain
+langchain_community
+python-dotenv
+requests
+langchain_openai
+streamlit
+sentence-transformers
+transformers
+torch
