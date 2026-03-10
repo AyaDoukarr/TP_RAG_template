@@ -1,60 +1,69 @@
-# 🤖 TP : Chatbot basé sur un RAG
+# TP – Chatbot RAG (IA générative)
 
-Un chatbot basé sur un système **RAG (Retrieval-Augmented Generation)** qui répond aux questions des utilisateurs en s'appuyant sur un ensemble de pages Wikipédia liées à l’IA générative.
+Ce projet a été réalisé dans le cadre d’un TP autour des systèmes RAG (Retrieval-Augmented Generation).  
+L’objectif est de construire un chatbot capable de répondre à des questions en s’appuyant sur des contenus externes plutôt que sur sa seule mémoire.
 
----
-
-## 🚀 Fonctionnalités
-
-* 🔎 Recherche d’informations depuis Wikipédia
-* 🧠 Indexation avec embeddings (ChromaDB)
-* 🤖 Génération de réponses avec un LLM
-* 🧩 Architecture simple et pédagogique
+Ici, le chatbot utilise plusieurs pages Wikipédia liées à l’IA générative pour produire ses réponses.
 
 ---
 
-## 🧠 Stack utilisée
+## 🧩 Principe
 
-* 🐍 Python
-* 🔗 LangChain
-* 🤖 OpenAI API
-* 🧾 Wikipédia API
-* 📦 ChromaDB
+Le fonctionnement est simple :
 
----
+1. récupération de contenus depuis Wikipédia  
+2. découpage des textes en morceaux  
+3. transformation en embeddings  
+4. stockage dans une base vectorielle (ChromaDB)  
+5. récupération des passages pertinents  
+6. génération de la réponse avec un modèle de langage  
 
-## ⚙️ Installation
+Ce TP m’a permis de mieux comprendre concrètement le fonctionnement d’un pipeline RAG.
 
-### 1️⃣ Cloner le projet
+
+
+## 🛠️ Technologies utilisées
+
+- Python  
+- LangChain  
+- OpenAI API  
+- Wikipédia API  
+- ChromaDB  
+
+
+
+## ▶️ Installation
+
+Cloner le repo :
 
 ```bash
 git clone https://github.com/AyaDoukarr/TP_RAG_template.git
 cd TP_RAG_template
-```
+````
 
-### 2️⃣ Installer les dépendances
+Installer les dépendances :
 
 ```bash
 pip install -r requirements.txt
 ```
 
----
 
-## 🔑 Configuration
 
-Créer le fichier `.env` à partir du template :
+## ⚙️ Configuration
+
+Créer le fichier `.env` :
 
 ```bash
 cp .env.template .env
 ```
 
-Puis ajouter ta clé API :
+Puis ajouter ta clé :
 
 ```
-OPENAI_API_KEY=ta_clef_api
+OPENAI_API_KEY=ta_clef
 ```
 
----
+
 
 ## ▶️ Lancer le projet
 
@@ -62,32 +71,17 @@ OPENAI_API_KEY=ta_clef_api
 python main.py
 ```
 
----
 
-## 📁 Structure du projet
 
-```
-TP_RAG_template/
-│── main.py
-│── app.py
-│── requirements.txt
-│── README.md
-│── .env.template
-│── chroma_db/
-```
+## 📌 Remarques
 
----
+* Le projet est volontairement simple pour rester pédagogique
+* Les réponses dépendent du contenu récupéré depuis Wikipédia
+* Certaines questions peuvent donner des réponses approximatives
 
-## 🎯 Objectif pédagogique
 
-Ce TP permet de comprendre :
-
-* le fonctionnement du RAG
-* l'utilisation des embeddings
-* l’intégration d’un LLM dans une application Python
-
----
 
 ## 👤 Auteur
 
 **Aya Doukarr**
+
