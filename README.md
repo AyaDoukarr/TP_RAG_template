@@ -1,40 +1,36 @@
-# TP – Chatbot RAG (IA générative)
+# Chatbot RAG – IA générative
 
-Ce projet a été réalisé dans le cadre d’un TP autour des systèmes RAG (Retrieval-Augmented Generation).  
-L’objectif est de construire un chatbot capable de répondre à des questions en s’appuyant sur des contenus externes plutôt que sur sa seule mémoire.
+Ce projet implémente un chatbot basé sur un pipeline **RAG (Retrieval-Augmented Generation)**.  
+L’objectif est de produire des réponses pertinentes à partir de sources externes (ici Wikipédia) plutôt que de dépendre uniquement du modèle de langage.
 
-Ici, le chatbot utilise plusieurs pages Wikipédia liées à l’IA générative pour produire ses réponses.
-
----
-
-## 🧩 Principe
-
-Le fonctionnement est simple :
-
-1. récupération de contenus depuis Wikipédia  
-2. découpage des textes en morceaux  
-3. transformation en embeddings  
-4. stockage dans une base vectorielle (ChromaDB)  
-5. récupération des passages pertinents  
-6. génération de la réponse avec un modèle de langage  
-
-Ce TP m’a permis de mieux comprendre concrètement le fonctionnement d’un pipeline RAG.
+Le projet a été réalisé dans un cadre pédagogique, avec une attention particulière portée à la clarté de l’architecture et à la compréhension du fonctionnement d’un système RAG de bout en bout.
 
 
+## ⚙️ Fonctionnement
 
-## 🛠️ Technologies utilisées
+Le pipeline suit les étapes suivantes :
 
-- Python  
-- LangChain  
-- OpenAI API  
-- Wikipédia API  
-- ChromaDB  
+- récupération de pages Wikipédia liées à l’IA générative  
+- découpage des textes en chunks  
+- génération d’embeddings  
+- stockage dans une base vectorielle (ChromaDB)  
+- recherche des passages les plus pertinents  
+- génération d’une réponse contextualisée via un LLM  
 
 
+## 🛠️ Stack technique
 
-## ▶️ Installation
+- **Python**
+- **LangChain**
+- **OpenAI API**
+- **ChromaDB**
+- **Wikipedia API**
+- **Streamlit** (interface utilisateur)
 
-Cloner le repo :
+
+## 🚀 Installation
+
+Cloner le dépôt :
 
 ```bash
 git clone https://github.com/AyaDoukarr/TP_RAG_template.git
@@ -48,40 +44,67 @@ pip install -r requirements.txt
 ```
 
 
+## 🔑 Configuration
 
-## ⚙️ Configuration
-
-Créer le fichier `.env` :
+Créer le fichier `.env` à partir du template :
 
 ```bash
 cp .env.template .env
 ```
 
-Puis ajouter ta clé :
+Ajouter ensuite ta clé API :
 
 ```
-OPENAI_API_KEY=ta_clef
+OPENAI_API_KEY=ta_clef_api
 ```
-
-
 
 ## ▶️ Lancer le projet
+
+### 🔹 Mode script (console)
 
 ```bash
 python main.py
 ```
 
+### 🔹 Mode interface (Streamlit)
+
+```bash
+streamlit run app.py
+```
+
+Puis ouvrir dans le navigateur :
+
+```
+http://localhost:8501
+```
 
 
-## 📌 Remarques
+## 📁 Structure du projet
 
-* Le projet est volontairement simple pour rester pédagogique
-* Les réponses dépendent du contenu récupéré depuis Wikipédia
-* Certaines questions peuvent donner des réponses approximatives
+```
+TP_RAG_template/
+│── main.py          # pipeline RAG (console)
+│── app.py           # interface Streamlit
+│── requirements.txt
+│── .env.template
+│── chroma_db/
+```
 
+---
 
+## 📌 Notes
+
+* Le projet est volontairement simple pour rester lisible
+* Les réponses dépendent fortement des documents récupérés
+* Certaines réponses peuvent être imprécises selon le contexte
+
+---
 
 ## 👤 Auteur
 
 **Aya Doukarr**
+
+
+
+
 
